@@ -7,6 +7,7 @@ use function GuzzleHttp\Psr7\try_fopen;
 use PHPUnit\Framework\TestCase;
 use Pimcore\Model\Asset;
 use Symfony\Component\HttpFoundation\Request;
+use Tests\TinyPngBundle\TestHelper;
 use Tinify\AccountException;
 use Tinify\Exception;
 use TinyPngBundle\Controller\ConfigController;
@@ -24,7 +25,7 @@ class TinyPngServiceTest extends TestCase
 
         $this->assertFileExists(PIMCORE_ASSET_DIRECTORY."/image.jpg");
 
-        unlink(PIMCORE_CONFIGURATION_DIRECTORY . '/tinypng.php');
+        TestHelper::cleanConfig();
     }
 
     private function buildAsset()
