@@ -1,3 +1,5 @@
 /.idea/
 /vendor/
 /composer.lock
+src/var/config/tinypng.php
+src/web/var/assets/image.jpg

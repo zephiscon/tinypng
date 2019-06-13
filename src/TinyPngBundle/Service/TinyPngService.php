@@ -14,7 +14,7 @@ use TinyPngBundle\Helper\AssetHelper;
 class TinyPngService
 {
     /**
-     * @param Asset\Image $image
+     * @param Asset $image
      */
     public function minimize(Asset $image)
     {

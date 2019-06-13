@@ -11,6 +11,7 @@ class ContentControllerTest extends TestCase
 {
     public function testGetConfigWithoutConfigFile()
     {
+        $this->cleanup();
         $config = (new ConfigController())->getConfig();
         $this->assertEquals('{"config":{"apiKey":""}}', $config->getContent());
     }
@@ -34,6 +35,14 @@ class ContentControllerTest extends TestCase
     {
         $config = (new ConfigController())->getConfig();
         $this->assertEquals('{"config":{"apiKey":"1234"}}', $config->getContent());
-        unlink(PIMCORE_CONFIGURATION_DIRECTORY . '/tinypng.php');
+        $this->cleanup();
+    }
+
+    private function cleanup()
+    {
+        $file = PIMCORE_CONFIGURATION_DIRECTORY . '/tinypng.php';
+        if(self::fileExists($file)){
+            unlink($file);
+        }
     }
 }

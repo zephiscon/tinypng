@@ -22,16 +22,6 @@ class TinyPngAssetListener implements EventSubscriberInterface
     ];
 
     /**
-     * @var ApplicationLogger
-     */
-    private $logger;
-
-    public function __construct()
-    {
-        $this->logger = ApplicationLogger::getInstance('TinyPNG');
-    }
-
-    /**
      * @return array
      */
     public static function getSubscribedEvents()
@@ -44,20 +34,23 @@ class TinyPngAssetListener implements EventSubscriberInterface
 
     /**
      * @param AssetEvent $event
+     * @return bool
      */
-    public function onImageSave(AssetEvent $event)
+    public function onImageSave(AssetEvent $event) : bool
     {
         if (!in_array($event->getAsset()->getMimetype(), $this->mimeTypes)) {
-            return;
+            return false;
         }
 
         try {
             (new TinyPngService())->minimize($event->getAsset());
         } catch (\Exception $e) {
-            $this->logger->error($e->getMessage(), [
+            (ApplicationLogger::getInstance())->error($e->getMessage(), [
                 'relatedObject' => $event->getAsset(),
                 'component' => 'TinyPNG'
             ]);
         }
+
+        return true;
     }
 }
