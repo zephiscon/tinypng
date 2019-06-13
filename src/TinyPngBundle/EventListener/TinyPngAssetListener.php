@@ -28,7 +28,7 @@ class TinyPngAssetListener implements EventSubscriberInterface
 
     public function __construct()
     {
-        $this->logger = ApplicationLogger::getInstance();
+        $this->logger = ApplicationLogger::getInstance('TinyPNG');
     }
 
     /**
