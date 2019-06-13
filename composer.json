@@ -1,7 +1,7 @@
 {
   "name": "zephis/tiny-png-bundle",
   "type": "pimcore-bundle",
-  "description": "Pimcore Bundle - Minifies ",
+  "description": "Pimcore Bundle - Minifies your PNG and JPEG Assets on uploading to Pimcore",
   "keywords": [
     "Pimcore",
     "TinyPNG"
