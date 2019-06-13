@@ -1,0 +1,3 @@
+tiny_png_homepage:
+    path:     /
+    defaults: { _controller: TinyPngBundle:Default:index }

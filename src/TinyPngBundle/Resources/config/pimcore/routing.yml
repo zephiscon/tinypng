@@ -1,0 +1,5 @@
+zephis_tiny_png:
+    resource: "@TinyPngBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

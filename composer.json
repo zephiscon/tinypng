@@ -1,0 +1,43 @@
+{
+  "name": "zephis/tiny-png-bundle",
+  "type": "pimcore-bundle",
+  "description": "Pimcore Bundle - Minifies ",
+  "keywords": [
+    "Pimcore",
+    "TinyPNG"
+  ],
+  "require": {
+    "php": ">=7.2",
+    "pimcore/core-version": ">=5.6.0",
+    "pimcore/pimcore": ">=5.6.0",
+    "tinify/tinify": "~1.5.2"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "symfony/phpunit-bridge": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "TinyPngBundle\\": "src/TinyPngBundle"
+    },
+    "exclude-from-classmap": [
+      "vendor/phpunit"
+    ]
+  },
+  "extra": {
+    "pimcore": {
+      "bundles": [
+        "TinyPngBundle\\TinyPngBundle"
+      ]
+    }
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Daniel Herz",
+      "email": "daniel.herz@zephis.de",
+      "homepage": "http://www.zephis.de/",
+      "role": "Developer"
+    }
+  ]
+}
