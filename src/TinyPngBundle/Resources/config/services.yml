@@ -19,3 +19,7 @@ services:
     TinyPngBundle\EventListener\TinyPngAssetListener:
         tags:
             - { name: kernel.event_subscriber }
+
+    TinyPngBundle\Command\OptimizeImagesCommand:
+        autowire: true
+        autoconfigure: true
